@@ -1,0 +1,41 @@
+Câu 1: Phân biệt giữa prop và state, khi nào sử dụng prop, khi nào sửa dụng state
+- Props được hiểu là như một đối số của component. Dùng dể truyền dữ liệu, phương thức từ component cha sang component con
+- State như một bộ nhớ tạm trong lifecycle của 1 ứng dụng. Dùng để lưu dữ liệu và lấy ra để thay đổi giá trị
+Câu 2: 
+- componentDidMount được gọi khi một component được render lần đầu tiên, sau khi constructor và rendering method đã chạy xong
+-componentDidUpdate được gọi khi component được render lại hoặc khi các props hoặc state của component thay đổi.
+componentDidUpdate(prevProps, prevState) {
+    if (this.state.count !== prevState.count) {    
+            console.log('Đã cập nhật state count: ', this.state.count);
+    }
+  }
+bài 3:
+class Product extends React.Component {
+  handleClick = () => {
+ 
+  }
+
+  componentDidMount() {
+    this.button.addEventListener('click', this.handleClick);
+  }
+
+  componentWillUnmount() {
+    this.button.removeEventListener('click', this.handleClick);
+  }
+
+  render() {
+    return (
+      <div>
+        <span>{this.props.name}</span>
+        <button ref={button => (this.button = button)}>Xóa sản phẩm</button>
+      </div>
+    );
+  }
+}
+
+bài 4:
+Khi ấn vào buttton thì component sẽ render và inputEl.current có giá trị là "clicked" 
+
+bài 5:
+Khi tao render componentA thì component con có render theo, vì componentB đang là con của componentA 
+và đang được mount trong render ít nhất phải render 1 lần vì tính chất componentDidMount

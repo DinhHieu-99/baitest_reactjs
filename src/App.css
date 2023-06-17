@@ -1,0 +1,24 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+body{
+  background-color: rgb(13, 12, 24);
+  color: rgba(255, 255, 255, 0.534);
+}
+span{
+  font-size: 50px;
+}
+.millisecond{
+  font-size: 15px;
+}
+
+.start-pasue{
+  background-color: rgb(255, 196, 0);
+}
+
+.reset{
+  background-color: rgba(0, 110, 255, 0.527);
+}
