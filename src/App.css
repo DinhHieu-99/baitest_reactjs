@@ -9,7 +9,7 @@ body{
   color: rgba(255, 255, 255, 0.534);
 }
 span{
-  font-size: 50px;
+  font-size: 15px;
 }
 .millisecond{
   font-size: 15px;
@@ -19,6 +19,14 @@ span{
   background-color: rgb(255, 196, 0);
 }
 
-.reset{
+.save{
   background-color: rgba(0, 110, 255, 0.527);
+}
+
+.showNumber{
+  font-size: 50px;
+}
+
+ul li{
+  list-style-type: none;
 }
