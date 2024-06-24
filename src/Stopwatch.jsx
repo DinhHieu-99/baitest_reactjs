@@ -4,11 +4,11 @@ import Content from './Content'
 
 const Stopwatch = () => {
     const [time, setTime] = useState(0)
-    const [isTime, setIsTime] = useState(false)
     const [save, setSave] = useState([])
     const timeRef = useRef()
     const valueRef = useRef(null)
-
+    
+    const [isTime, setIsTime] = useState(false)
     useEffect(()=>{
         if (isTime) {
             timeRef.current = setInterval(() => {
@@ -37,11 +37,11 @@ const Stopwatch = () => {
     },[isTime])
 
     const handleSave = useCallback(()=>{
-        if(!save){
-            return
-        }
+        // if(!save){
+        //     // return
+        // }
         const items = {
-            value: valueRef.current.innerText,
+            values: valueRef.current.innerText,
             id: Date.now()
         }
         console.log(items)
@@ -54,8 +54,6 @@ const Stopwatch = () => {
         setIsTime(false)
         console.log('reset')
     },[])
-
-    console.log(1)
   return (
     <>
         <h2>Đồng hồ bấm giờ</h2>
@@ -67,7 +65,7 @@ const Stopwatch = () => {
             {
                 save.map((item)=>{
                     return(
-                        <li key={item.id}>{item.value}</li>
+                        <li key={item.id}>{item.values}</li>
                     )
                 })
             }
